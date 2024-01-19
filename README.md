@@ -7,5 +7,10 @@ Todo :
     https://www.youtube.com/watch?v=EhPeHeoKF88
 
 3. Understand and explain the working of NFT.sol
-4. Follow the code instructions for Market.sol contract 
+4. Installations and guide :
+  Hardhat : https://www.youtube.com/watch?v=9KGvY9-g1_w
+  
+
+
+Follow the code instructions for Market.sol contract 
 
