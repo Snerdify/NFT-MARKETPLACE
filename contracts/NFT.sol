@@ -1,32 +1,21 @@
 // SPDX-License-Identifier: MIT OR Apache-2.0
 pragma solidity ^0.8.3;
-
-//Counters is used to incrementing utils
 import "@openzeppelin/contracts/utils/Counters.sol";
-//ERC721  gives us an additional function setTokenUri
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
-//standard smart contract import from openzeppelin
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-
 import "hardhat/console.sol";
 
-//here we inherit from ERC721URIStrage which inturn inherits from ERC721
+// install openzeppelin and hardhat 
+
+
+
+
 contract NFT is ERC721URIStorage {
     
     using Counters for Counters.Counter;
-    //use counters to declare a private variable called tokenIds,which allows us to keeping track of 
-    // incrementing values for each token
     Counters.Counter private _tokenIds;
-    //variable contractAddress is the address of the marketplace that we want out NFT to be able to interact
-    //with and vice versa
-    address contractAddress;
-
-
-//give the marketplace the ability to transact these tokens and change the ownership of these tokens from a seperate contract
-//to do that call the function setApprovalForAll and pass in the contractAddress whose value we will set in below constructor
-//use the constructor to set the value of the contractAddress
-//constructor will take in the marketplaceaddress as the argument
-
+    address contractAddres;
+    
     constructor(address marketplaceAddress) ERC721("Metaverse", "METT") {
         //then set the contractAddress as argument for marketplaceaddress
         //beacuse we need the address of marketplace before deploying the contract
